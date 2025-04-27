@@ -1,190 +1,192 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300&display=swap'); /* Импортирует шрифт Ubuntu из Google Fonts */
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
-}
-p{
-    font-size: 20px;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #673AB7;
+* {
+    padding: 0; /* Убирает отступы у всех элементов */
+    margin: 0; /* Убирает внешние отступы у всех элементов */
+    box-sizing: border-box; /* Устанавливает модель коробки, чтобы padding и border входили в общую ширину и высоту элемента */
+    font-family: 'Ubuntu', sans-serif; /* Устанавливает шрифт Ubuntu для всех элементов, с запасным шрифтом sans-serif */
 }
 
-.wrapper{
-    padding: 25px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+p {
+    font-size: 20px; /* Устанавливает размер шрифта для всех параграфов */
 }
 
-.cards, .card, .view, .details, p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    display: flex; /* Использует flexbox для выравнивания содержимого */
+    align-items: center; /* Выравнивает содержимое по вертикали по центру */
+    justify-content: center; /* Выравнивает содержимое по горизонтали по центру */
+    min-height: 100vh; /* Устанавливает минимальную высоту тела на 100% высоты видимой области */
+    background: #673AB7; /* Устанавливает фоновый цвет для тела страницы */
 }
 
-.cards{
-    height: 350px;
-    width: 350px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.wrapper {
+    padding: 25px; /* Устанавливает внутренние отступы для обертки */
+    background: #f8f8f8; /* Устанавливает фоновый цвет для обертки */
+    border-radius: 10px; /* Закругляет углы обертки */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Добавляет тень к обертке */
 }
 
-.cards .card{
-    cursor: pointer;
-    position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    height: calc(100% / 4 - 10px);
-    width: calc(100% / 4 - 10px);
+.cards, .card, .view, .details, p {
+    display: flex; /* Использует flexbox для выравнивания содержимого внутри этих элементов */
+    align-items: center; /* Выравнивает содержимое по вертикали по центру */
+    justify-content: center; /* Выравнивает содержимое по горизонтали по центру */
 }
 
-.card.shake{
-    animation: shake 0.35s ease-in-out;
+.cards {
+    height: 350px; /* Устанавливает высоту контейнера карточек на 350 пикселей */
+    width: 350px; /* Устанавливает ширину контейнера карточек на 350 пикселей */
+    flex-wrap: wrap; /* Позволяет элементам внутри контейнера переноситься на новую строку, если не хватает места */
+    justify-content: space-between; /* Распределяет карточки по горизонтали с равными промежутками между ними */
 }
 
-@keyframes shake{
-    0%, 100%{
-        transform: translateX(0);
+.cards .card {
+    cursor: pointer; /* Изменяет курсор на указатель при наведении на карточку */
+    position: relative; /* Устанавливает относительное позиционирование для карточки, чтобы дочерние элементы могли позиционироваться относительно нее */
+    perspective: 1000px; /* Устанавливает перспективу для 3D-трансформаций внутри карточки */
+    transform-style: preserve-3d; /* Позволяет дочерним элементам сохранять 3D-преобразования */
+    height: calc(100% / 4 - 10px); /* Устанавливает высоту карточки, равную 1/4 высоты контейнера минус 10 пикселей */
+    width: calc(100% / 4 - 10px); /* Устанавливает ширину карточки, равную 1/4 ширины контейнера минус 10 пикселей */
+}
+
+.card.shake {
+    animation: shake 0.35s ease-in-out; /* Применяет анимацию "shake" к карточке на 0.35 секунды с плавным началом и концом */
+}
+
+@keyframes shake { /* Определяет анимацию с именем "shake" */
+    0%, 100% { /* В начале и в конце анимации */
+        transform: translateX(0); /* Элемент не смещен по оси X */
     }
-    20%{
-        transform: translateX(-13px);
+    20% { /* На 20% пути анимации */
+        transform: translateX(-13px); /* Элемент смещен на 13 пикселей влево */
     }
-    40%{
-        transform: translateX(13px);
+    40% { /* На 40% пути анимации */
+        transform: translateX(13px); /* Элемент смещен на 13 пикселей вправо */
     }
-    60%{
-        transform: translateX(-8px);
+    60% { /* На 60% пути анимации */
+        transform: translateX(-8px); /* Элемент смещен на 8 пикселей влево */
     }
-    80%{
-        transform: translateX(8px);
-    }
-}
-
-.cards .card .view{
-    width: 100%;
-    height: 100%;
-    user-select: none;
-    pointer-events: none;
-    position: absolute;
-    background: #fff;
-    border-radius: 7px;
-    backface-visibility: hidden;
-    transition: transform 0.25s linear;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.card .front-view i{
-    font-size: 40px;
-}
-
-.card .back-view i{
-    font-size: 40px;
-}
-
-.card .back-view {
-    transform: rotateY(-180deg);
-}
-.card.flip .front-view{
-    transform: rotateY(180deg);
-}
-
-.card.flip .back-view{
-    transform: rotateY(0);
-}
-
-.details{
-    width: 100%;
-    margin-top: 15px;
-    padding: 0 20px;
-    background: #fff;
-    border-radius: 7px;
-    height: calc(100% / 4 - 30px);
-    justify-content: space-between;
-}
-
-.details p{
-    font-size: 18px;
-    height: 17px;
-    padding-right: 18px;
-    border-right: 1px solid #ccc;
-}
-
-.details p span{
-    margin-left: 8px;
-}
-
-.details p b{
-    font-weight: 500;
-}
-
-.details button{
-    cursor: pointer;
-    font-size: 14px;
-    color: #673AB7;
-    border-radius: 4px;
-    padding: 4px 11px;
-    background: #fff;
-    border: 2px solid #673AB7;
-    transition: 0.3s ease;
-}
-
-.details button:hover{
-    color: #fff;
-    background: #673AB7;
-}
-
-::selection{
-    color: #fff;
-    background: #673AB7;
-}
-
-@media screen and (max-width: 700px) {
-    .cards{
-        height: 350px;
-        width: 350px;
-    }
-    .card .front-view i{
-        font-size: 35px;
-    }
-    .card .back-view i{
-        font-size: 35px;
+    80% { /* На 80% пути анимации */
+        transform: translateX(8px); /* Элемент смещен на 8 пикселей вправо */
     }
 }
 
-@media screen and (max-width: 530px) {
-    .cards{
-        height: 300px;
-        width: 300px;
+.cards .card .view { /* Стили для элемента с классом "view", который находится внутри карточки */
+    width: 100%; /* Устанавливает ширину элемента на 100% от родительского элемента */
+    height: 100%; /* Устанавливает высоту элемента на 100% от родительского элемента */
+    user-select: none; /* Запрещает выделение текста внутри элемента */
+    pointer-events: none; /* Отключает взаимодействие с элементом (например, клики) */
+    position: absolute; /* Устанавливает абсолютное позиционирование для элемента */
+    background: #fff; /* Устанавливает белый фон для элемента */
+    border-radius: 7px; /* Закругляет углы элемента на 7 пикселей */
+    backface-visibility: hidden; /* Скрывает заднюю сторону элемента при 3D-повороте */
+    transition: transform 0.25s linear; /* Устанавливает плавный переход для трансформации на 0.25 секунды */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Добавляет тень к элементу */
+}
+
+.card .front-view i { /* Стили для иконки на передней стороне карточки */
+    font-size: 40px; /* Устанавливает размер шрифта иконки на 40 пикселей */
+}
+
+.card .back-view i { /* Стили для иконки на задней стороне карточки */
+    font-size: 40px; /* Устанавливает размер шрифта иконки на 40 пикселей */
+}
+
+.card .back-view { /* Стили для задней стороны карточки */
+    transform: rotateY(-180deg); /* Поворачивает заднюю сторону на 180 градусов по оси Y (скрывает ее из вида) */
+}
+
+.card.flip .front-view { /* Стили для передней стороны карточки, когда карточка перевернута (класс "flip" добавлен) */
+    transform: rotateY(180deg); /* Поворачивает переднюю сторону на 180 градусов по оси Y (скрывает ее из вида) */
+}
+
+.card.flip .back-view { /* Стили для задней стороны карточки, когда карточка перевернута (класс "flip" добавлен) */
+    transform: rotateY(0); /* Возвращает заднюю сторону в исходное положение (показывает ее) */
+}
+
+.details { /* Стили для блока с деталями игры */
+    width: 100%; /* Устанавливает ширину блока на 100% от родительского элемента */
+    margin-top: 15px; /* Устанавливает верхний отступ на 15 пикселей */
+    padding: 0 20px; /* Устанавливает внутренние отступы: 0 сверху и снизу, 20 пикселей слева и справа */
+    background: #fff; /* Устанавливает белый фон для блока */
+    border-radius: 7px; /* Закругляет углы блока на 7 пикселей */
+    height: calc(100% / 4 - 30px); /* Устанавливает высоту блока, равную 1/4 высоты родительского элемента минус 30 пикселей */
+    justify-content: space-between; /* Распределяет содержимое блока с равными промежутками между элементами */
+}
+
+.details p { /* Стили для параграфов внутри блока с деталями */
+    font-size: 18px; /* Устанавливает размер шрифта для параграфов на 18 пикселей */
+    height: 17px; /* Устанавливает высоту параграфов на 17 пикселей */
+    padding-right: 18px; /* Устанавливает правый внутренний отступ на 18 пикселей */
+    border-right: 1px solid #ccc; /* Добавляет правую границу шириной 1 пиксель и цветом #ccc (светло-серый) */
+}
+
+.details p span { /* Стили для элементов span внутри параграфов */
+    margin-left: 8px; /* Устанавливает левый внешний отступ на 8 пикселей */
+}
+
+.details p b { /* Стили для элементов b (жирный текст) внутри параграфов */
+    font-weight: 500; /* Устанавливает толщину шрифта на 500 (полужирный) */
+}
+
+.details button { /* Стили для кнопки внутри блока с деталями */
+    cursor: pointer; /* Изменяет курсор на указатель при наведении на кнопку */
+    font-size: 14px; /* Устанавливает размер шрифта для кнопки на 14 пикселей */
+    color: #673AB7; /* Устанавливает цвет текста кнопки на #673AB7 (фиолетовый) */
+    border-radius: 4px; /* Закругляет углы кнопки на 4 пикселя */
+    padding: 4px 11px; /* Устанавливает внутренние отступы: 4 пикселя сверху и снизу, 11 пикселей слева и справа */
+    background: #fff; /* Устанавливает белый фон для кнопки */
+    border: 2px solid #673AB7; /* Устанавливает границу шириной 2 пикселя и цветом #673AB7 (фиолетовый) */
+    transition: 0.3s ease; /* Устанавливает плавный переход для всех изменений стилей на 0.3 секунды */
+}
+
+.details button:hover { /* Стили для кнопки внутри блока с деталями при наведении курсора */
+    color: #fff; /* Устанавливает цвет текста кнопки на белый при наведении */
+    background: #673AB7; /* Устанавливает фон кнопки на фиолетовый при наведении */
+}
+
+::selection { /* Стили для выделенного текста на странице */
+    color: #fff; /* Устанавливает цвет выделенного текста на белый */
+    background: #673AB7; /* Устанавливает фон выделенного текста на фиолетовый */
+}
+
+@media screen and (max-width: 700px) { /* Медиа-запрос для экранов с шириной 700 пикселей и меньше */
+    .cards { /* Стили для контейнера карточек */
+        height: 350px; /* Устанавливает высоту контейнера карточек на 350 пикселей */
+        width: 350px; /* Устанавливает ширину контейнера карточек на 350 пикселей */
     }
-    .card .back-view i{
-        font-size: 30px;
+    .card .front-view i { /* Стили для иконки на передней стороне карточки */
+        font-size: 35px; /* Устанавливает размер шрифта иконки на 35 пикселей */
     }
-    .details{
-        margin-top: 10px;
-        padding: 0 15px;
-        height: calc(100% / 4 - 20px);
+    .card .back-view i { /* Стили для иконки на задней стороне карточки */
+        font-size: 35px; /* Устанавливает размер шрифта иконки на 35 пикселей */
+    }
+}
+
+@media screen and (max-width: 530px) { /* Медиа-запрос для экранов с шириной 530 пикселей и меньше */
+    .cards { /* Стили для контейнера карточек */
+        height: 300px; /* Устанавливает высоту контейнера карточек на 300 пикселей */
+        width: 300px; /* Устанавливает ширину контейнера карточек на 300 пикселей */
+    }
+    .card .back-view i { /* Стили для иконки на задней стороне карточки */
+        font-size: 30px; /* Устанавливает размер шрифта иконки на 30 пикселей */
+    }
+    .details { /* Стили для блока с деталями игры */
+        margin-top: 10px; /* Устанавливает верхний отступ на 10 пикселей */
+        padding: 0 15px; /* Устанавливает внутренние отступы: 0 сверху и снизу, 15 пикселей слева и справа */
+        height: calc(100% / 4 - 20px); /* Устанавливает высоту блока, равную 1/4 высоты родительского элемента минус 20 пикселей */
     }
 
-    .details p{
-        height: 15px;
-        font-size: 17px;
-        padding-right: 13px;
+    .details p { /* Стили для параграфов внутри блока с деталями */
+        height: 15px; /* Устанавливает высоту параграфов на 15 пикселей */
+        font-size: 17px; /* Устанавливает размер шрифта для параграфов на 17 пикселей */
+        padding-right: 13px; /* Устанавливает правый внутренний отступ на 13 пикселей */
     }
 
-    .details button{
-        font-size: 13px;
-        padding: 5px 10px;
-        border: none;
-        color: #fff;
-        background: #673AB7;
+    .details button { /* Стили для кнопки внутри блока с деталями */
+        font-size: 13px; /* Устанавливает размер шрифта для кнопки на 13 пикселей */
+        padding: 5px 10px; /* Устанавливает внутренние отступы: 5 пикселей сверху и снизу, 10 пикселей слева и справа */
+        border: none; /* Убирает границу у кнопки */
+        color: #fff; /* Устанавливает цвет текста кнопки на белый */
+        background: #673AB7; /* Устанавливает фон кнопки на фиолетовый */
     }
-    
 }

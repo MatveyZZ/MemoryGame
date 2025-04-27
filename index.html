@@ -1,125 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Определяет тип документа как HTML5 -->
+<html lang="en"> <!-- Начало HTML-документа с указанием языка (английский) -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory FlipCard Game | AsmrProg</title>
+    <meta charset="UTF-8"> <!-- Устанавливает кодировку документа на UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Указывает браузеру использовать режим совместимости с IE -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'> <!-- Подключает стили иконок Boxicons -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключает внешний CSS-файл для стилей страницы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Устанавливает параметры для адаптивного дизайна -->
+    <title>Memory FlipCard Game | AsmrProg</title> <!-- Устанавливает заголовок страницы -->
 </head>
 <body>
 
-    <div class="wrapper">
-        <ul class="cards">
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+    <div class="wrapper"> <!-- Обертка для содержимого игры -->
+        <ul class="cards"> <!-- Ненумерованный список для карточек игры -->
+            <li class="card"> <!-- Первая карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-tiktok'></i>
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
-                </div>
-                <div class="view back-view">
-                    <i class='bx bxl-instagram-alt'></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-tiktok'></i> <!-- Иконка TikTok на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Вторая карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-facebook-circle' ></i>
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
-                </div>
-                <div class="view back-view">
-                    <i class='bx bxl-twitter'></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-instagram-alt'></i> <!-- Иконка Instagram на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Третья карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-whatsapp' ></i>
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
-                </div>
-                <div class="view back-view">
-                    <i class='bx bxl-youtube' ></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-facebook-circle'></i> <!-- Иконка Facebook на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Четвертая карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-tiktok'></i>
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
-                </div>
-                <div class="view back-view">
-                    <i class='bx bxl-instagram-alt'></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-twitter'></i> <!-- Иконка Twitter на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Пятая карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-facebook-circle' ></i>
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
-                </div>
-                <div class="view back-view">
-                    <i class='bx bxl-twitter'></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-whatsapp'></i> <!-- Иконка WhatsApp на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Шестая карточка -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-whatsapp' ></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-youtube'></i> <!-- Иконка YouTube на задней стороне -->
                 </div>
             </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class='bx bx-question-mark'></i>
+            <li class="card"> <!-- Седьмая карточка (дубликат первой) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
                 </div>
-                <div class="view back-view">
-                    <i class='bx bxl-youtube' ></i>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-tiktok'></i> <!-- Иконка TikTok на задней стороне -->
+                </div>
+            </li>
+            <li class="card"> <!-- Восьмая карточка (дубликат второй) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
+                </div>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-instagram-alt'></i> <!-- Иконка Instagram на задней стороне -->
+                </div>
+            </li>
+            <li class="card"> <!-- Девятая карточка (дубликат третьей) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
+                </div>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-facebook-circle'></i> <!-- Иконка Facebook на задней стороне -->
+                </div>
+            </li>
+            <li class="card"> <!-- Десятая карточка (дубликат четвертой) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
+                </div>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-twitter'></i> <!-- Иконка Twitter на задней стороне -->
+                </div>
+            </li>
+            <li class="card"> <!-- Одиннадцатая карточка (дубликат пятой) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
+                </div>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-whatsapp'></i> <!-- Иконка WhatsApp на задней стороне -->
+                </div>
+            </li>
+            <li class="card"> <!-- Двенадцатая карточка (дубликат шестой) -->
+                <div class="view front-view"> <!-- Передняя сторона карточки -->
+                    <i class='bx bx-question-mark'></i> <!-- Иконка вопроса на передней стороне -->
+                </div>
+                <div class="view back-view"> <!-- Задняя сторона карточки -->
+                    <i class='bx bxl-youtube'></i> <!-- Иконка YouTube на задней стороне -->
                 </div>
             </li>
 
-            <div class="details">
-                <p class="time">Time : <span><b>0</b>s</span></p>
-                <p class="flips">Flips : <span><b>0</b></span></p>
-                <button>Refresh</button>
+            <div class="details"> <!-- Блок с информацией об игре -->
+                <p class="time">Time : <span><b>0</b>s</span></p> <!-- Отображает время игры -->
+                <p class="flips">Flips : <span><b>0</b></span></p> <!-- Отображает количество переворотов карточек -->
+                <button>Refresh</button> <!-- Кнопка для обновления игры -->
             </div>
         </ul>
     </div>
 
-
-    
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Подключает внешний JavaScript-файл для логики игры -->
 
 </body>
 </html>
